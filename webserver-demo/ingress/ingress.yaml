@@ -3,9 +3,12 @@ kind: Ingress
 metadata:
   name: marvel-ingress
   namespace: ingress-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
+  - host: all
+    http:
       paths:
       - path: /
         pathType: Prefix
